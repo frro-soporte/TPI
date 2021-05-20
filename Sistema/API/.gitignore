@@ -105,3 +105,8 @@ ENV/
 # mypy
 .mypy_cache/
 /migrations
+
+#Custom Flask Migrate
+app/migrations
+#disabled for now
+#!app/migrations/versions
