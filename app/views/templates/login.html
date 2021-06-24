@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<div class="alert alert-success" role="alert">
+    {{ msg }}
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="/login/" method="POST">
+    {{ form.username.label() }} {{form.username()}}
+    <br>
+    {{ form.password.label() }} {{form.password()}}
+    <br>
+    {{ form.submit()}}
+</form>
+
+{% endblock %}
